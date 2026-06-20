@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #152E7A;
+  --cobalt: #1D4DA8;
+  --cyan: #4DC5E8;
+  --white: #FFFFFF;
+  --off-white: #F4F6FB;
+  --navy-90: rgba(21, 46, 122, 0.09);
+  --font-display: 'Times New Roman', Times, serif;
+  --font-body: 'Times New Roman', Times, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: #2a2a2a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hero background shapes */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-6px) translateX(3px); }
+}
+
+@keyframes floatSlowAlt {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(6px) translateX(-3px); }
+}
+
+@keyframes floatMonogram {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.hero-float {
+  animation: floatMonogram 6s ease-in-out infinite;
+}
+
+.hero-bg-shape {
+  animation: floatSlow 10s ease-in-out infinite;
+}
+
+.hero-bg-shape-alt {
+  animation: floatSlowAlt 12s ease-in-out infinite;
+}
+
+/* Button micro-interactions */
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(77, 197, 232, 0.25);
+}
+
+.btn-secondary {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 46, 122, 0.1);
+}
+
+/* Link underline animation */
+.link-hover-underline {
+  position: relative;
+}
+
+.link-hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4DC5E8;
+  transition: width 0.24s ease;
+}
+
+.link-hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Service card hover */
+.service-card {
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Event row hover */
+.event-row {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-row:hover {
+  background-color: rgba(77, 197, 232, 0.04);
+  box-shadow: 0 2px 12px rgba(21, 46, 122, 0.04);
+}
+
+/* FAQ accordion */
+.faq-content {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease 0.05s, padding-bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Navbar scroll state */
+.navbar-scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgba(21, 46, 122, 0.97);
+  backdrop-filter: blur(8px);
+}
+
+/* Image hover */
+.img-hover {
+  transition: transform 0.4s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.02);
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-float,
+  .hero-bg-shape,
+  .hero-bg-shape-alt {
+    animation: none !important;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-float {
+    animation-duration: 8s;
+  }
+}
+
+/* Cookie consent entrance */
+@keyframes cookieIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-cookie-in {
+  animation: cookieIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
