@@ -48,7 +48,7 @@ export const eventLocations: EventLocation[] = [
     ],
   },
   {
-    date: '2026. június 13. szombat',
+    date: '2026. június 27. szombat',
     city: 'Keszthely',
     type: 'keszthely',
     singlePrice: '9.000 Ft / fő',
