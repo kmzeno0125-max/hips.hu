@@ -558,7 +558,7 @@ export default function Events() {
               </p>
 
               <p className="text-[16px] text-[#444] leading-[1.8] mb-4">
-                2026. december 12-én, a Guadalupei Szűzanya tiszteletére rendezek egy országos eseményt Budapesten, hogy az „Öngyógyítás Felsőfokon" ökumenikus témában azokat is tájékoztassam, akik mostanában kezdtek el foglalkozni a témával.
+                2026. december 12-én, a Guadalupei Szűzanya tiszteletére rendezek egy országos eseményt Budapesten, hogy az „Öngyógyítás Felsőfokon" ökumenikus módszerrel azokat is tájékoztassam, akik mostanában kezdtek el foglalkozni a témával.
               </p>
 
               <p className="text-[16px] text-[#444] leading-[1.8] mb-6">
