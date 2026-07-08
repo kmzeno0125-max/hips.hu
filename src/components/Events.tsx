@@ -93,14 +93,14 @@ function WebinarButtons({ event }: { event: EventLocation }) {
       <p className="text-[14px] text-[#555] mb-4 leading-[1.6]">
         Válassza ki az Önnek megfelelő webinar részvételi lehetőséget.
       </p>
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col gap-3">
         {event.webinarOptions?.map((option, i) => (
           <a
             key={option.label}
             href={option.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`btn-primary flex-1 text-center rounded-[6px] px-5 py-3 transition-colors ${
+            className={`btn-primary w-full text-center rounded-[6px] px-5 py-3 transition-colors ${
               i === 0
                 ? 'bg-navy text-white hover:bg-cobalt text-[14px] font-semibold'
                 : i === 1
@@ -550,7 +550,7 @@ export default function Events() {
             </div>
           </Reveal>
 
-          {/* EVENT 3 — December 12 Budapest */}
+          {/* EVENT 3 — December 12 Budapest Konferencia Jegyek */}
           <Reveal direction="left" delay={0.28}>
             <div className="bg-white rounded-[12px] border border-navy/[0.08] shadow-[0_4px_24px_rgba(21,46,122,0.06)] p-8 md:p-10">
               <p className="text-[17px] font-semibold text-cyan italic mb-6 leading-[1.5]">
@@ -565,12 +565,88 @@ export default function Events() {
                 Várom szeretettel azon résztvevőket is, akik már évtizedek óta foglalkoznak betegekkel, emberekkel, gyermekekkel akár orvosként, akár gyógyszerészként vagy ápolóként, esetleg természetgyógyászként, vallási vezetőként.
               </p>
 
-              <a
-                href="#kapcsolat"
-                className="btn-primary inline-block font-body text-[15px] font-semibold text-white bg-navy rounded-[6px] px-7 py-3 hover:bg-cobalt"
+              <h3 className="font-display text-[22px] font-bold text-navy mb-2">
+                Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód konferencia
+              </h3>
+              <p className="text-[16px] font-semibold text-cobalt mb-8">
+                2026. december 12., szombat – Budapest
+              </p>
+
+              <div className="space-y-4">
+                {/* Smaragd Partner */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[15px] font-semibold text-navy">Smaragd Partner – 10 db jegy + 1 db VIP jegy</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
+                  </div>
+                  <a
+                    href="{{STRIPE_SMARAGD_PARTNER}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                  >
+                    Jelentkezem
+                  </a>
+                </div>
+
+                {/* VIP jegy */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / fő</p>
+                  </div>
+                  <a
+                    href="{{STRIPE_VIP_JEGY}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                  >
+                    Jelentkezem
+                  </a>
+                </div>
+
+                {/* Részvételi jegy */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[15px] font-semibold text-navy">Részvételi jegy</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">9.000 Ft / fő</p>
+                  </div>
+                  <a
+                    href="{{STRIPE_RESZVETELI_JEGY}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                  >
+                    Jelentkezem
+                  </a>
+                </div>
+              </div>
+
+              <p
+                className="text-center mt-4"
+                style={{
+                  fontFamily: "'Figtree', sans-serif",
+                  fontSize: '12px',
+                  fontWeight: 400,
+                  color: '#64748B',
+                }}
               >
-                Jelentkezés &rarr;
-              </a>
+                A jelentkezéssel elfogadja az{' '}
+                <Link
+                  to="/aszf"
+                  style={{ color: '#1D4DA8', textDecoration: 'underline', fontWeight: 500 }}
+                >
+                  Általános Szerződési Feltételeket
+                </Link>{' '}
+                és az{' '}
+                <Link
+                  to="/adatkezelesi-tajekoztato"
+                  style={{ color: '#1D4DA8', textDecoration: 'underline', fontWeight: 500 }}
+                >
+                  Adatkezelési tájékoztatót
+                </Link>
+                .
+              </p>
 
               <ProgramContactCta />
             </div>
