@@ -580,7 +580,7 @@ export default function Events() {
                     <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
                   </div>
                   <a
-                    href="{{STRIPE_SMARAGD_PARTNER}}"
+                    href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
@@ -596,7 +596,7 @@ export default function Events() {
                     <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / fő</p>
                   </div>
                   <a
-                    href="{{STRIPE_VIP_JEGY}}"
+                    href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
@@ -612,7 +612,7 @@ export default function Events() {
                     <p className="text-[17px] font-bold text-navy mt-1">9.000 Ft / fő</p>
                   </div>
                   <a
-                    href="{{STRIPE_RESZVETELI_JEGY}}"
+                    href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"

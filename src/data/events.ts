@@ -33,17 +33,17 @@ export const eventLocations: EventLocation[] = [
       {
         label: 'Egyszeri alkalom',
         price: '600 Ft',
-        link: '{{STRIPE_WEBINAR_EGYSZERI}}',
+        link: 'https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809',
       },
       {
         label: 'Havi bérlet',
         price: '1.000 Ft',
-        link: '{{STRIPE_WEBINAR_HAVI}}',
+        link: 'https://buy.stripe.com/eVqeVdeex8geeFeafn6g808',
       },
       {
         label: 'Éves bérlet',
         price: '10.000 Ft',
-        link: '{{STRIPE_WEBINAR_EVES}}',
+        link: 'https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807',
       },
     ],
   },
