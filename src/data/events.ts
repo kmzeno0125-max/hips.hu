@@ -25,7 +25,7 @@ export interface EventLocation {
 
 export const eventLocations: EventLocation[] = [
   {
-    date: '2026. június 5. péntektől kezdődően minden pénteken 17.00–18.00 között',
+    date: 'Minden pénteken 17.00–18.00 között',
     city: 'On-line webinár',
     type: 'webinar',
     format: 'webinar',
