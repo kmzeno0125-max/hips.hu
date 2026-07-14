@@ -615,9 +615,10 @@ export default function Events() {
                     href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                    className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
                   >
-                    Jelentkezem
+                    Jelentkezem: 9.000 Ft / fő
                   </a>
                 </div>
               </div>
