@@ -576,7 +576,7 @@ export default function Events() {
                 {/* Smaragd Partner */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <p className="text-[15px] font-semibold text-navy">Smaragd Partner – 10 db jegy + 1 db VIP jegy</p>
+                    <p className="text-[15px] font-semibold text-navy">Smaragd Partner 2 nm kiállítás +20 db jegy +1 db VIP jegy</p>
                     <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
                   </div>
                   <a

@@ -48,7 +48,7 @@ export const eventLocations: EventLocation[] = [
     ],
   },
   {
-    date: '2026. július 11. szombat',
+    date: 'Minden szombaton Keszthelyen a Móló Café & Bárban „Egység Áldás" 12.00–14.00 között.',
     city: 'Keszthely',
     type: 'keszthely',
     singlePrice: '9.000 Ft / fő',
