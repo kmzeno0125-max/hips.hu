@@ -565,12 +565,22 @@ export default function Events() {
                 Várom szeretettel azon résztvevőket is, akik már évtizedek óta foglalkoznak betegekkel, emberekkel, gyermekekkel akár orvosként, akár gyógyszerészként vagy ápolóként, esetleg természetgyógyászként, vallási vezetőként.
               </p>
 
-              <h3 className="font-display text-[22px] font-bold text-navy mb-2">
-                Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód konferencia
-              </h3>
-              <p className="text-[16px] font-semibold text-cobalt mb-8">
-                2026. december 12., szombat – Budapest
-              </p>
+              <div className="mb-8">
+                <h3
+                  className="font-display font-bold text-navy leading-[1.15] tracking-[-0.01em]"
+                  style={{ fontSize: 'clamp(26px, 3.5vw, 38px)' }}
+                >
+                  Egészség a Legnagyobb Érték – Országos<br className="hidden sm:inline" /> Egészségmegőrző és Életmód konferencia
+                </h3>
+                <p className="text-[17px] sm:text-[19px] font-bold text-navy mt-2 leading-[1.4]">
+                  2026. december 12., szombat 9.00-17.00 Budapest, VIII. kerület Golgota utca 9.
+                </p>
+                <div className="mt-3">
+                  <span className="inline-block text-[15px] font-semibold text-navy border border-navy/[0.15] bg-[#f5f6f8] rounded-[6px] px-5 py-2">
+                    Smaragd Partner
+                  </span>
+                </div>
+              </div>
 
               <div className="space-y-4">
                 {/* Smaragd Partner */}
