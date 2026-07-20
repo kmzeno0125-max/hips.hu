@@ -573,7 +573,7 @@ export default function Events() {
                   Egészség a Legnagyobb Érték – Országos<br className="hidden sm:inline" /> Egészségmegőrző és Életmód konferencia
                 </h3>
                 <p className="text-[17px] sm:text-[19px] font-bold text-navy mt-2 leading-[1.4]">
-                  2026. december 12., szombat 9.00-17.00
+                  2026. december 12., szombat 9.00-17.00 Budapest
                 </p>
                 <div className="mt-3">
                   <span className="inline-block text-[15px] font-semibold text-navy border border-navy/[0.15] bg-[#f5f6f8] rounded-[6px] px-5 py-2">
