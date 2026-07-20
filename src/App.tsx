@@ -7,6 +7,7 @@ import Events from './components/Events';
 import FAQ from './components/FAQ';
 import BookPromo from './components/BookPromo';
 import Footer from './components/Footer';
+import Consultation from './components/Consultation';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Events />
       <FAQ />
       <BookPromo />
+      <Consultation />
       <Footer />
     </>
   );

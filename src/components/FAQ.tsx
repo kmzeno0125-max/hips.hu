@@ -21,7 +21,7 @@ const faqs = [
   {
     question: 'Hogyan zajlik a Stripe-on keresztüli fizetés?',
     answer:
-      'A "Jelentkezem" gombra kattintva a Stripe biztonságos fizetési oldalára kerülsz, ahol bankkártyával fizethetsz. A tranzakció titkosított és biztonságos.',
+      'A "Megveszem" gombra kattintva a Stripe biztonságos fizetési oldalára kerülsz, ahol bankkártyával fizethetsz. A tranzakció titkosított és biztonságos.',
   },
   {
     question: 'Mi történik lemondás esetén?',

@@ -154,7 +154,7 @@ function KeszthelyButton({ event }: { event: EventLocation }) {
           rel="noopener noreferrer"
           className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
         >
-          Jelentkezem: {event.singlePrice}
+          Megveszem: {event.singlePrice}
         </a>
       </div>
       <p
@@ -199,7 +199,7 @@ function SingleOnlyButton({ event }: { event: EventLocation }) {
           rel="noopener noreferrer"
           className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
         >
-          Jelentkezem: {event.singlePrice}
+          Megveszem: {event.singlePrice}
         </a>
       </div>
       <p
@@ -257,7 +257,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
               : 'bg-navy text-white hover:bg-cobalt'
           }`}
         >
-          Jelentkezem (1 fő)
+          Megveszem (1 fő)
         </a>
         <a
           href={event.links?.double || '#'}
@@ -543,7 +543,7 @@ export default function Events() {
                 rel="noopener noreferrer"
                 className="btn-primary inline-block font-body text-[15px] font-semibold text-white bg-navy rounded-[6px] px-7 py-3 hover:bg-cobalt"
               >
-                „Sorsfordító Nagy Utazás" Jelentkezés &rarr;
+                „Sorsfordító Nagy Utazás" Megveszem &rarr;
               </a>
 
               <ProgramContactCta />
@@ -595,7 +595,7 @@ export default function Events() {
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
                   >
-                    Jelentkezem
+                    Megveszem
                   </a>
                 </div>
 
@@ -603,7 +603,7 @@ export default function Events() {
                 <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
                     <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / fő</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / 2 fő</p>
                   </div>
                   <a
                     href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
@@ -611,7 +611,7 @@ export default function Events() {
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
                   >
-                    Jelentkezem
+                    Megveszem
                   </a>
                 </div>
 
@@ -628,7 +628,7 @@ export default function Events() {
                     className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
                     style={{ fontFamily: "'Times New Roman', Times, serif" }}
                   >
-                    Jelentkezem: 9.000 Ft / fő
+                    Megveszem: 9.000 Ft / fő
                   </a>
                 </div>
               </div>
