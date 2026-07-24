@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, AlertTriangle, ShieldAlert } from 'lucide-react';
 
@@ -31,7 +31,7 @@ export default function Aszf() {
       'Általános Szerződési Feltételek a Dr. Hips Frigyes Zsolt által szervezett Öngyógyító Napokra, webinárokra és konzultációkra.'
     );
     setMeta('robots', 'index, follow');
-    setCanonical('https://subscribepage.io/Dr-Hips-Frigyes-Zsolt/aszf');
+    setCanonical('https://hips.hu/aszf');
     window.scrollTo(0, 0);
     return () => {
       document.title = prevTitle;
@@ -102,15 +102,20 @@ export default function Aszf() {
               ['Bankszámlaszám', '10103513-52695400-01006000'],
               ['Telefon', '+36 20 316 24 42'],
               ['E-mail', 'hips.hu@gmail.com'],
-              ['Weboldal', 'https://subscribepage.io/Dr-Hips-Frigyes-Zsolt'],
+              ['Weboldal', 'https://hips.hu/'],
             ]}
           />
           <Sub n="2.15." title="Tárhelyszolgáltató adatai">
             <DataList
               rows={[
-                ['Név', '{{TÁRHELYSZOLGÁLTATÓ_NEVE}}'],
-                ['Cím', '{{TÁRHELYSZOLGÁLTATÓ_CÍME}}'],
-                ['Elérhetőség', '{{TÁRHELYSZOLGÁLTATÓ_ELÉRHETŐSÉG}}'],
+                ['Név', 'Rackhost Zrt.'],
+                ['Teljes név', 'Rackhost Informatikai Zártkörűen Működő Részvénytársaság'],
+                ['Székhely', '6722 Szeged, Tisza Lajos körút 41.'],
+                ['E-mail', <a key="rackhost-email" href="mailto:info@rackhost.hu" className="text-cobalt hover:underline">info@rackhost.hu</a>],
+                ['Telefon', <a key="rackhost-tel" href="tel:+3614451200" className="text-cobalt hover:underline">+36 1 445 1200</a>],
+                ['Honlap', <a key="rackhost-web" href="https://www.rackhost.hu/" target="_blank" rel="noopener noreferrer" className="text-cobalt hover:underline">https://www.rackhost.hu/</a>],
+                ['Cégjegyzékszám', '06-10-000489'],
+                ['Adószám', '25333572-2-06'],
               ]}
             />
           </Sub>
@@ -143,8 +148,8 @@ export default function Aszf() {
               items={[
                 'a) Öngyógyító Napok — egész napos személyes workshop',
                 'b) Online webinár',
-                'c) Egyéni konzultáció ({{HA_KÍNÁLT}})',
-                'd) Oktatási anyagok ({{HA_KÍNÁLT}})',
+                'c) Egyéni konzultáció',
+                'd) Oktatási anyagok',
               ]}
             />
           </Sub>
@@ -190,8 +195,7 @@ export default function Aszf() {
           </Sub>
           <Sub n="5.3." title="A szerződés nyelve">Magyar.</Sub>
           <Sub n="5.4." title="A szerződés iktatása">
-            Az elektronikus szerződést a Szolgáltató iktatja, megőrzésének időtartama:{' '}
-            {'{{IKTATÁSI_IDŐ — pl. 8 év}}'}.
+            Az elektronikus szerződést a Szolgáltató iktatja, megőrzésének időtartama: 8 év.
           </Sub>
           <Sub n="5.5." title="Adatbeviteli hibák javítása">
             A jelentkezési folyamat során a „Vissza" gombbal léphet vissza, illetve a kitöltött
@@ -216,7 +220,7 @@ export default function Aszf() {
             visszaigazolja.
           </Sub>
           <Sub n="6.4." title="Részletfizetés / előleg">
-            {'{{NEM_ÁLL_FENN / VAGY: részletezés}}'}.
+            Részletfizetés nem áll fenn. A részvételi díj egyösszegű.
           </Sub>
         </Section>
 
@@ -226,7 +230,7 @@ export default function Aszf() {
             állít ki (Áfa tv. 163. §).
           </Sub>
           <Sub n="7.2." title="Számlázóprogram">
-            {'{{SZÁMLÁZÓ_RENDSZER — pl. KBOSS.hu Kft. (Számlázz.hu), Billingo Technologies Zrt., vagy NAV Online Számlázó}}'}.
+            A Szolgáltató a számlázást elektronikus számlázóprogram segítségével végzi.
           </Sub>
           <Sub n="7.3." title="A számla kézbesítése">
             A számlát a Szolgáltató a Megrendelő által megadott e-mail címre küldi.
@@ -235,7 +239,7 @@ export default function Aszf() {
             Az adatszolgáltatás a 23/2014. (VI. 30.) NGM rendelet alapján automatikusan teljesül.
           </Sub>
           <Sub n="7.5." title="Számlamódosítás">
-            Számla módosítása a kiállítást követő {'{{HATÁRIDŐ — pl. 8 nap}}'} napon belül
+            Számla módosítása a kiállítást követő 8 napon belül
             kérhető a hips.hu@gmail.com címen.
           </Sub>
         </Section>
@@ -373,10 +377,11 @@ export default function Aszf() {
             </p>
             <DataList
               rows={[
-                ['Megnevezés', '{{ILLETÉKES_BÉKÉLTETŐ_TESTÜLET_NEVE}}'],
-                ['Cím', '{{BÉKÉLTETŐ_TESTÜLET_CÍME}}'],
-                ['Telefon', '{{BÉKÉLTETŐ_TESTÜLET_TELEFON}}'],
-                ['E-mail', '{{BÉKÉLTETŐ_TESTÜLET_EMAIL}}'],
+                ['Megnevezés', 'Hajdú-Bihar Vármegyei Békéltető Testület'],
+                ['Cím', '4025 Debrecen, Vörösmarty utca 13–15.'],
+                ['Telefon', <><a key="bekelteto-tel1" href="tel:+3652500745" className="text-cobalt hover:underline">+36 52 500 745</a>, <a key="bekelteto-tel2" href="tel:+3652500743" className="text-cobalt hover:underline">+36 52 500 743</a></>],
+                ['E-mail', <a key="bekelteto-email" href="mailto:bekelteto@hbkik.hu" className="text-cobalt hover:underline">bekelteto@hbkik.hu</a>],
+                ['Honlap', <a key="bekelteto-web" href="https://www.hbmbekeltetes.hu/" target="_blank" rel="noopener noreferrer" className="text-cobalt hover:underline">https://www.hbmbekeltetes.hu/</a>],
               ]}
             />
             <p className="font-body text-[15px] text-[#475569] leading-[1.7] mt-3">
@@ -523,15 +528,15 @@ function Bullets({ items }: { items: React.ReactNode[] }) {
   );
 }
 
-function DataList({ rows }: { rows: [string, string][] }) {
+function DataList({ rows }: { rows: [string, ReactNode][] }) {
   return (
     <div className="border border-[#E2E8F0] rounded-md overflow-hidden mt-3">
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse" style={{ tableLayout: 'fixed' }}>
         <tbody>
           {rows.map(([k, v], i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F8FAFC]'}>
               <th className="text-left font-body text-[14px] font-semibold text-navy align-top px-3 py-3 w-[40%] border-b border-[#E2E8F0]">{k}</th>
-              <td className="font-body text-[15px] text-[#1E293B] align-top px-3 py-3 border-b border-[#E2E8F0]">{v}</td>
+              <td className="font-body text-[15px] text-[#1E293B] align-top px-3 py-3 border-b border-[#E2E8F0]" style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}>{v}</td>
             </tr>
           ))}
         </tbody>

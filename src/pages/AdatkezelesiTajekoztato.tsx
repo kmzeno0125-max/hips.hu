@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
@@ -31,7 +31,7 @@ export default function AdatkezelesiTajekoztato() {
       'A Dr. Hips Frigyes Zsolt weboldalának GDPR-konform adatkezelési tájékoztatója. A személyes adatok kezelésének szabályai.'
     );
     setMeta('robots', 'index, follow');
-    setCanonical('https://subscribepage.io/Dr-Hips-Frigyes-Zsolt/adatkezelesi-tajekoztato');
+    setCanonical('https://hips.hu/adatkezelesi-tajekoztato');
     window.scrollTo(0, 0);
     return () => {
       document.title = prevTitle;
@@ -89,7 +89,7 @@ export default function AdatkezelesiTajekoztato() {
               ['Adószám', '55211884-1-29'],
               ['Telefon', '+36 20 316 24 42'],
               ['Hivatalos e-mail', 'hips.hu@gmail.com'],
-              ['Weboldal', 'https://subscribepage.io/Dr-Hips-Frigyes-Zsolt'],
+              ['Weboldal', 'https://hips.hu/'],
             ]}
           />
           <P>
@@ -164,18 +164,18 @@ export default function AdatkezelesiTajekoztato() {
                 duration: 'a megkeresés lezárását követő 1 év',
               },
               {
-                name: '6) Hírlevél küldés ({{HA_VAN_HÍRLEVÉL}})',
+                name: '6) Hírlevél küldés',
                 data: 'név, e-mail',
                 purpose: 'tájékoztatás új eseményekről, tartalmakról, akciókról',
                 legal: 'GDPR 6. cikk (1) a) — hozzájárulás + Grtv. 6. § (1)',
                 duration: 'a hozzájárulás visszavonásáig (leiratkozási link minden levélben kötelező)',
               },
               {
-                name: '7) Weboldal-statisztika / cookie-alapú analytics ({{HA_HASZNÁL}})',
+                name: '7) Weboldal-statisztika / cookie-alapú analytics',
                 data: 'anonimizált IP, böngészési viselkedés, eszközadatok',
                 purpose: 'weboldal-optimalizálás, használati minták elemzése',
                 legal: 'GDPR 6. cikk (1) a) — hozzájárulás (cookie-bannerrel)',
-                duration: '{{ANALYTICS_MEGŐRZÉS — pl. GA4 alapért. 14 hónap}}',
+                duration: '14 hónap',
               },
             ]}
           />
@@ -190,9 +190,14 @@ export default function AdatkezelesiTajekoztato() {
           <ProcessorBlock
             name="Tárhelyszolgáltató"
             details={[
-              ['Név', '{{TÁRHELYSZOLGÁLTATÓ_NEVE}}'],
-              ['Székhely', '{{TÁRHELYSZOLGÁLTATÓ_CÍM}}'],
-              ['Elérhetőség', '{{TÁRHELYSZOLGÁLTATÓ_ELÉRHETŐSÉG}}'],
+              ['Név', 'Rackhost Zrt.'],
+              ['Teljes név', 'Rackhost Informatikai Zártkörűen Működő Részvénytársaság'],
+              ['Székhely', '6722 Szeged, Tisza Lajos körút 41.'],
+              ['E-mail', <a key="rackhost-email" href="mailto:info@rackhost.hu" className="text-cobalt hover:underline">info@rackhost.hu</a>],
+              ['Telefon', <a key="rackhost-tel" href="tel:+3614451200" className="text-cobalt hover:underline">+36 1 445 1200</a>],
+              ['Honlap', <a key="rackhost-web" href="https://www.rackhost.hu/" target="_blank" rel="noopener noreferrer" className="text-cobalt hover:underline">https://www.rackhost.hu/</a>],
+              ['Cégjegyzékszám', '06-10-000489'],
+              ['Adószám', '25333572-2-06'],
               ['Átadott adatok', 'a weboldalon megadott összes adat (tárolás)'],
               ['Adatfeldolgozás célja', 'a weboldal és az adatok elérhetőségének biztosítása'],
             ]}
@@ -211,7 +216,6 @@ export default function AdatkezelesiTajekoztato() {
           <ProcessorBlock
             name="Számlázóprogram-szolgáltató"
             details={[
-              ['Név és adatok', '{{SZÁMLÁZÓ_RENDSZER_TELJES_ADATAI — pl. KBOSS.hu Kft. (Számlázz.hu) vagy Billingo Technologies Zrt.}}'],
               ['Átadott adatok', 'számlázási név, cím, adószám (cég esetén), tételek, összegek'],
               ['Adatfeldolgozás célja', 'számla kiállítása, megőrzése, NAV adatszolgáltatás'],
             ]}
@@ -220,7 +224,6 @@ export default function AdatkezelesiTajekoztato() {
           <ProcessorBlock
             name="E-mail szolgáltatás"
             details={[
-              ['Név és adatok', '{{EMAIL_SZOLGÁLTATÓ_ADATAI — pl. Google Workspace, Google Ireland Ltd.}}'],
               ['Átadott adatok', 'e-mailek tartalma, címzettek, küldési metaadatok'],
               ['Adatfeldolgozás célja', 'üzleti levelezés bonyolítása'],
             ]}
@@ -229,7 +232,6 @@ export default function AdatkezelesiTajekoztato() {
           <ProcessorBlock
             name="Hírlevélkezelő (ha van)"
             details={[
-              ['Név és adatok', '{{HÍRLEVÉL_SZOLGÁLTATÓ_ADATAI}}'],
               ['Átadott adatok', 'név, e-mail, megnyitási és kattintási statisztikák'],
               ['Adatfeldolgozás célja', 'hírlevél kézbesítése, kampánystatisztika'],
             ]}
@@ -371,9 +373,9 @@ export default function AdatkezelesiTajekoztato() {
           </h3>
           <CookieTable
             rows={[
-              ['{{COOKIE_NÉV_1}}', '{{COOKIE_CÉL_1}}', '{{SZOLGÁLTATÓ_1}}', '{{ÉLETTARTAM_1}}', 'Feltétlenül szükséges'],
-              ['{{COOKIE_NÉV_2}}', '{{COOKIE_CÉL_2}}', '{{SZOLGÁLTATÓ_2}}', '{{ÉLETTARTAM_2}}', 'Statisztikai'],
-              ['{{COOKIE_NÉV_3}}', '{{COOKIE_CÉL_3}}', '{{SZOLGÁLTATÓ_3}}', '{{ÉLETTARTAM_3}}', 'Marketing'],
+              ['cookie-consent', 'A cookie-hozzájárulás tárolása', 'Saját (hips.hu)', '1 év', 'Feltétlenül szükséges'],
+              ['_ga', 'Google Analytics — anonim használati statisztika', 'Google LLC', '14 hónap', 'Statisztikai'],
+              ['_ga_<container-id>', 'Google Analytics — egyedi felhasználó azonosítása', 'Google LLC', '14 hónap', 'Statisztikai'],
             ]}
           />
 
@@ -463,15 +465,15 @@ function Bullets({ items }: { items: React.ReactNode[] }) {
   );
 }
 
-function DataList({ rows }: { rows: [string, string][] }) {
+function DataList({ rows }: { rows: [string, ReactNode][] }) {
   return (
     <div className="border border-[#E2E8F0] rounded-md overflow-hidden mt-3">
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse" style={{ tableLayout: 'fixed' }}>
         <tbody>
           {rows.map(([k, v], i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F8FAFC]'}>
               <th className="text-left font-body text-[14px] font-semibold text-navy align-top px-3 py-3 w-[40%] border-b border-[#E2E8F0]">{k}</th>
-              <td className="font-body text-[15px] text-[#1E293B] align-top px-3 py-3 border-b border-[#E2E8F0]">{v}</td>
+              <td className="font-body text-[15px] text-[#1E293B] align-top px-3 py-3 border-b border-[#E2E8F0]" style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}>{v}</td>
             </tr>
           ))}
         </tbody>
@@ -530,7 +532,7 @@ function ActivityTable({ rows }: { rows: ActivityRow[] }) {
   );
 }
 
-function ProcessorBlock({ name, details }: { name: string; details: [string, string][] }) {
+function ProcessorBlock({ name, details }: { name: string; details: [string, ReactNode][] }) {
   return (
     <div className="mt-5">
       <h3 className="font-display font-bold text-cobalt text-[1.25rem]">{name}</h3>
@@ -565,7 +567,7 @@ function CookieTable({ rows }: { rows: [string, string, string, string, string][
           {rows.map((r, i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#F8FAFC]'}>
               {r.map((cell, j) => (
-                <td key={j} className="align-top font-body text-[14px] text-[#1E293B] px-3 py-3 border-b border-[#E2E8F0]">{cell}</td>
+                <td key={j} className="align-top font-body text-[14px] text-[#1E293B] px-3 py-3 border-b border-[#E2E8F0]" style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}>{cell}</td>
               ))}
             </tr>
           ))}
