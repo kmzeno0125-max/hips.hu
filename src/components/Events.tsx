@@ -631,6 +631,31 @@ export default function Events() {
                     Megveszem: 9.000 Ft / fő
                   </a>
                 </div>
+
+                {/* Kiállítói jegy */}
+                <div className="border border-cyan/40 rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#F8FBFD]">
+                  <div className="min-w-0">
+                    <p className="text-[15px] font-semibold text-navy">Kiállítói jegy</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">90.000 Ft</p>
+                    <p className="text-[14px] text-[#555] mt-2 leading-[1.6]">
+                      A kiállítói csomag 2 m²-es standhelyet és 10 db belépőjegyet tartalmaz.
+                    </p>
+                    <ul className="mt-2 space-y-1 text-[14px] text-[#444]">
+                      <li>• 2 m² kiállítói stand</li>
+                      <li>• 10 db belépőjegy</li>
+                      <li>• részvétel kiállítóként az eseményen</li>
+                    </ul>
+                  </div>
+                  <a
+                    href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
+                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
+                </div>
               </div>
 
               <p
