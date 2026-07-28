@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
+import DiscountCountdown from './DiscountCountdown';
 import spiralImage from '../assets/spiral-clock.png';
 import { eventLocations, EventLocation } from '../data/events';
 
@@ -614,6 +615,9 @@ export default function Events() {
                     Megveszem
                   </a>
                 </div>
+
+                {/* Időszakos kedvezmény + visszaszámláló */}
+                <DiscountCountdown />
 
                 {/* Részvételi jegy */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
