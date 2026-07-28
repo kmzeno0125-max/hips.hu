@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import ConferenceBanner from './components/ConferenceBanner';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import About from './components/About';
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <ConferenceBanner />
       <Hero />
       <Stats />
       <About />

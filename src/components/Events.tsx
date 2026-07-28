@@ -553,7 +553,7 @@ export default function Events() {
 
           {/* EVENT 3 — December 12 Budapest Konferencia Jegyek */}
           <Reveal direction="left" delay={0.28}>
-            <div className="bg-white rounded-[12px] border border-navy/[0.08] shadow-[0_4px_24px_rgba(21,46,122,0.06)] p-8 md:p-10">
+            <div id="egeszseg-konferencia-jegy" style={{ scrollMarginTop: '110px' }} className="bg-white rounded-[12px] border border-navy/[0.08] shadow-[0_4px_24px_rgba(21,46,122,0.06)] p-8 md:p-10">
               <p className="text-[17px] font-semibold text-cyan italic mb-6 leading-[1.5]">
                 „Az Egészség a Legnagyobb Érték."
               </p>
