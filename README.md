@@ -1,3 +1,3 @@
 # hips.hu
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-h4n4zcum)
+Dr. Hips Frigyes Zsolt – Holisztikus egészség és öngyógyítás
