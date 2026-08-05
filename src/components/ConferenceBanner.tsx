@@ -15,7 +15,7 @@ export default function ConferenceBanner() {
                 className="group block rounded-[12px] overflow-hidden shadow-[0_4px_18px_rgba(21,46,122,0.12)] cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan/50 transition-shadow duration-300 hover:shadow-[0_10px_32px_rgba(21,46,122,0.22)]"
               >
                 <img
-                  src="/files_10287071-2026-08-05T07-10-13-866Z-image.webp"
+                  src="/files_10287071-2026-08-05T07-16-21-259Z-files_10287071-2026-08-05T07-10-13-866Z-image.webp"
                   alt="Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia, Budapest"
                   className="w-full h-auto object-contain block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 />
