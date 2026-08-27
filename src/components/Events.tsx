@@ -1,8 +1,58 @@
+import { useState, type ReactNode } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
 import DiscountCountdown from './DiscountCountdown';
 import spiralImage from '../assets/spiral-clock.png';
 import { eventLocations, EventLocation } from '../data/events';
+
+function ExpandableDetails({ id, children }: { id: string; children: ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="mt-4 border-t border-navy/[0.08] pt-3">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={id}
+        onClick={() => setIsOpen((open) => !open)}
+        className="flex w-full items-center justify-between gap-4 text-left text-[14px] font-semibold text-navy hover:text-cobalt transition-colors"
+      >
+        <span>Mit tartalmaz?</span>
+        <ChevronDown
+          aria-hidden="true"
+          size={18}
+          strokeWidth={2}
+          className={`shrink-0 transition-transform duration-250 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+      <div
+        id={id}
+        aria-hidden={!isOpen}
+        className={`grid transition-[grid-template-rows,opacity] duration-250 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div className="mt-3 border-l-[3px] border-cyan bg-[#F5FAFD] px-4 py-3 text-[14px] leading-[1.7] text-[#444]">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BenefitList({ items, columns = 1 }: { items: string[]; columns?: 1 | 2 }) {
+  return (
+    <ul className={`mt-3 grid gap-x-4 gap-y-2 text-[13px] leading-[1.45] text-[#444] ${columns === 2 ? 'sm:grid-cols-2' : 'grid-cols-1'}`}>
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2">
+          <span aria-hidden="true" className="mt-[0.45em] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function SignupBlock({ event }: { event: EventLocation }) {
   const isPlaceholder = event.placeholder;
@@ -585,35 +635,64 @@ export default function Events() {
 
               <div className="space-y-4">
                 {/* Smaragd Partner */}
-                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <p className="text-[15px] font-semibold text-navy">Smaragd Partner 2 nm kiállítás +20 db jegy +1 db VIP jegy</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
+                <div className="border border-navy/[0.08] rounded-[10px] p-5">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold text-navy">Smaragd Partner 2 nm kiállítás +20 db jegy +1 db VIP jegy</p>
+                      <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
+                      <BenefitList
+                        columns={2}
+                        items={[
+                          '2 m² kiállítói felület',
+                          '20 db normál belépőjegy',
+                          '2 db ebédjegy',
+                          '2 db vacsorajegy',
+                          'szponzori logómegjelenés',
+                        ]}
+                      />
+                    </div>
+                    <a
+                      href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                    >
+                      Megveszem
+                    </a>
                   </div>
-                  <a
-                    href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
-                  >
-                    Megveszem
-                  </a>
+                  <ExpandableDetails id="smaragd-details">
+                    A Smaragd Partner az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest” szponzora, aki a helyszínen 2 m² kiállítói felületen bemutathatja termékeit, valamint az esemény kommunikációs felületein feltüntetésre kerül a szponzor logója. A Smaragd Partner szponzori jegyet megvásárló 20 db normál belépőjegyet, 2 db ebédjegyet és 2 db vacsorajegyet kap.
+                  </ExpandableDetails>
                 </div>
 
                 {/* VIP jegy */}
-                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / 2 fő</p>
+                <div className="border border-navy/[0.08] rounded-[10px] p-5">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
+                      <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / 2 fő</p>
+                      <BenefitList
+                        items={[
+                          '2 fő részére',
+                          'egész napos program',
+                          'ebéd',
+                          'VIP vacsora',
+                          '2 éjszaka szállás',
+                        ]}
+                      />
+                    </div>
+                    <a
+                      href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                    >
+                      Megveszem
+                    </a>
                   </div>
-                  <a
-                    href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
-                  >
-                    Megveszem
-                  </a>
+                  <ExpandableDetails id="vip-details">
+                    A 2026. december 12-én szombaton tartandó „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód” konferencia utáni VIP vacsora belépőjegyének ára az egész napos programon való részvételt is tartalmazza ebéddel. A VIP jegy 2 főre szól, és tartalmazza a péntek és a szombat éjszakai szállás költségét is egy közeli hotelben.
+                  </ExpandableDetails>
                 </div>
 
                 {/* Időszakos kedvezmény + visszaszámláló */}
@@ -637,28 +716,33 @@ export default function Events() {
                 </div>
 
                 {/* Kiállítói jegy */}
-                <div className="border border-cyan/40 rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-[#F8FBFD]">
-                  <div className="min-w-0">
-                    <p className="text-[15px] font-semibold text-navy">Kiállítói jegy</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">90.000 Ft</p>
-                    <p className="text-[14px] text-[#555] mt-2 leading-[1.6]">
-                      A kiállítói csomag 2 m²-es standhelyet és 10 db belépőjegyet tartalmaz.
-                    </p>
-                    <ul className="mt-2 space-y-1 text-[14px] text-[#444]">
-                      <li>• 2 m² kiállítói stand</li>
-                      <li>• 10 db belépőjegy</li>
-                      <li>• részvétel kiállítóként az eseményen</li>
-                    </ul>
+                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold text-navy">Kiállítói jegy</p>
+                      <p className="text-[17px] font-bold text-navy mt-1">90.000 Ft</p>
+                      <BenefitList
+                        items={[
+                          '2 m² kiállítói stand',
+                          '10 db belépőjegy',
+                          '2026. december 12.',
+                          '9.00–17.00',
+                        ]}
+                      />
+                    </div>
+                    <a
+                      href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    >
+                      MEGVÁSÁROLOM
+                    </a>
                   </div>
-                  <a
-                    href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
-                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
-                  >
-                    MEGVÁSÁROLOM
-                  </a>
+                  <ExpandableDetails id="kiallitoi-details">
+                    2026. december 12-én szombaton 9.00–17.00 között rendezzük meg az emberi szervezet öngyógyító képességeit bemutató előadásokat, amelyre várunk szeretettel mindenkit, aki az alternatív gyógyászat, az öngyógyítás és az egészségmegőrzés terén új dolgokat szeretne megtanulni, valamint érdeklődik a tudatalatti programok működése iránt.
+                  </ExpandableDetails>
                 </div>
               </div>
 
