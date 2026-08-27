@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import pendulumImage from '../assets/files_8595244-2026-05-21T09-14-35-749Z-image.png';
 
-const profileImage = '/files_8595244-2026-05-21T16-48-03-362Z-files_8595244-2026-05-21T16-40-25-631Z-image.webp';
+const profileImage = '/oltonyprofilkep.webp';
 
 const badges = [
   'Szakgyógyszerész',
