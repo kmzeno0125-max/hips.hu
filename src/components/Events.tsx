@@ -159,7 +159,7 @@ function WebinarButtons({ event }: { event: EventLocation }) {
                   : 'border-[1.5px] border-navy/20 text-navy/80 hover:border-navy/40 hover:bg-navy/[0.04] text-[14px] font-semibold'
             }`}
           >
-            {option.label}: {option.price}
+MEGVÁSÁROLOM
           </a>
         ))}
       </div>
@@ -205,7 +205,7 @@ function KeszthelyButton({ event }: { event: EventLocation }) {
           rel="noopener noreferrer"
           className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
         >
-          Megveszem: {event.singlePrice}
+          MEGVÁSÁROLOM
         </a>
       </div>
       <p
@@ -250,7 +250,7 @@ function SingleOnlyButton({ event }: { event: EventLocation }) {
           rel="noopener noreferrer"
           className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
         >
-          Megveszem: {event.singlePrice}
+          MEGVÁSÁROLOM
         </a>
       </div>
       <p
@@ -308,7 +308,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
               : 'bg-navy text-white hover:bg-cobalt'
           }`}
         >
-          Megveszem (1 fő)
+          MEGVÁSÁROLOM
         </a>
         <a
           href={event.links?.double || '#'}
@@ -323,7 +323,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
               : 'border-cyan bg-cyan/[0.08] text-navy hover:bg-cyan/[0.18]'
           }`}
         >
-          Ketten jövünk (-20%)
+          MEGVÁSÁROLOM
         </a>
         <a
           href={event.links?.triple || '#'}
@@ -338,7 +338,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
               : 'border-navy/20 text-navy/80 hover:border-navy/40 hover:bg-navy/[0.04]'
           }`}
         >
-          Hárman jövünk (-33%)
+          MEGVÁSÁROLOM
         </a>
       </div>
       {!disabled && (
@@ -490,6 +490,25 @@ export default function Events() {
                   „MINDEN ÉRTÉKNEK VAN ELLENÉRTÉKE!"
                 </p>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  <div className="rounded-[10px] border border-navy/[0.12] bg-[#F5FAFD] px-5 py-4">
+                    <p className="text-[13px] font-semibold text-navy/70 mb-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                      Offline részvétel
+                    </p>
+                    <p className="text-[22px] font-bold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                      5.000 Ft
+                    </p>
+                  </div>
+                  <div className="rounded-[10px] border border-cyan/40 bg-cyan/[0.08] px-5 py-4">
+                    <p className="text-[13px] font-semibold text-navy/70 mb-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                      Online részvétel
+                    </p>
+                    <p className="text-[22px] font-bold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                      6.900 Ft
+                    </p>
+                  </div>
+                </div>
+
                 <p className="text-[15px] text-[#444] leading-[1.8] mb-2">
                   A webinaron alkalmanként 600 Ft/óra részvételi díj előre történő kifizetésével lehetséges a részvétel.
                 </p>
@@ -594,7 +613,7 @@ export default function Events() {
                 rel="noopener noreferrer"
                 className="btn-primary inline-block font-body text-[15px] font-semibold text-white bg-navy rounded-[6px] px-7 py-3 hover:bg-cobalt"
               >
-                „Sorsfordító Nagy Utazás" Megveszem &rarr;
+                MEGVÁSÁROLOM
               </a>
 
               <ProgramContactCta />
@@ -657,7 +676,7 @@ export default function Events() {
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
                     >
-                      Megveszem
+                      MEGVÁSÁROLOM
                     </a>
                   </div>
                   <ExpandableDetails id="smaragd-details">
@@ -687,7 +706,7 @@ export default function Events() {
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
                     >
-                      Megveszem
+                      MEGVÁSÁROLOM
                     </a>
                   </div>
                   <ExpandableDetails id="vip-details">
@@ -711,7 +730,7 @@ export default function Events() {
                     className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
                     style={{ fontFamily: "'Times New Roman', Times, serif" }}
                   >
-                    Megveszem: 9.000 Ft / fő
+                    MEGVÁSÁROLOM
                   </a>
                 </div>
 

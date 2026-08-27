@@ -54,7 +54,7 @@ export default function BookPromo() {
               rel="noopener noreferrer"
               className="btn-primary inline-block font-body text-[15px] font-semibold bg-cyan text-navy px-8 py-[14px] rounded-[6px] mb-8"
             >
-              MEGVÁSÁROLOM A KÖNYVET
+              MEGVÁSÁROLOM
             </a>
           </Reveal>
 
