@@ -159,7 +159,8 @@ function WebinarButtons({ event }: { event: EventLocation }) {
                   : 'border-[1.5px] border-navy/20 text-navy/80 hover:border-navy/40 hover:bg-navy/[0.04] text-[14px] font-semibold'
             }`}
           >
-MEGVÁSÁROLOM
+            {option.label}: {option.price}
+            <span className="block text-[11px] font-normal opacity-70 mt-0.5">MEGVÁSÁROLOM</span>
           </a>
         ))}
       </div>
@@ -490,25 +491,6 @@ export default function Events() {
                   „MINDEN ÉRTÉKNEK VAN ELLENÉRTÉKE!"
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  <div className="rounded-[10px] border border-navy/[0.12] bg-[#F5FAFD] px-5 py-4">
-                    <p className="text-[13px] font-semibold text-navy/70 mb-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                      Offline részvétel
-                    </p>
-                    <p className="text-[22px] font-bold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                      5.000 Ft
-                    </p>
-                  </div>
-                  <div className="rounded-[10px] border border-cyan/40 bg-cyan/[0.08] px-5 py-4">
-                    <p className="text-[13px] font-semibold text-navy/70 mb-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                      Online részvétel
-                    </p>
-                    <p className="text-[22px] font-bold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                      6.900 Ft
-                    </p>
-                  </div>
-                </div>
-
                 <p className="text-[15px] text-[#444] leading-[1.8] mb-2">
                   A webinaron alkalmanként 600 Ft/óra részvételi díj előre történő kifizetésével lehetséges a részvétel.
                 </p>
@@ -523,7 +505,7 @@ export default function Events() {
                     rel="noopener noreferrer"
                     className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
                   >
-                    600 Ft/óra
+                    Webinar alkalmanként: 600 Ft
                   </a>
                   <a
                     href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
@@ -531,7 +513,7 @@ export default function Events() {
                     rel="noopener noreferrer"
                     className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
                   >
-                    1.000 Ft/hó
+                    Havonta: 1.000 Ft
                   </a>
                   <a
                     href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
@@ -539,7 +521,7 @@ export default function Events() {
                     rel="noopener noreferrer"
                     className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
                   >
-                    10.000 Ft/év
+                    Éves előfizetés: 10.000 Ft
                   </a>
                 </div>
 
@@ -628,7 +610,7 @@ export default function Events() {
               </p>
 
               <p className="text-[16px] text-[#444] leading-[1.8] mb-4">
-                2026. december 12-én, a Guadalupei Szűzanya tiszteletére rendezek egy országos eseményt Budapesten, hogy az „Öngyógyítás Felsőfokon" ökumenikus módszerrel azokat is tájékoztassam, akik mostanában kezdtek el foglalkozni a témával.
+                2026. december 12-én, a Guadalupei Szűzanya védőszent napján rendezek egy országos eseményt Budapesten, hogy az „Öngyógyítás Felsőfokon" ökumenikus módszerrel azokat is tájékoztassam, akik mostanában kezdtek el foglalkozni a témával.
               </p>
 
               <p className="text-[16px] text-[#444] leading-[1.8] mb-6">
@@ -762,6 +744,24 @@ export default function Events() {
                   <ExpandableDetails id="kiallitoi-details">
                     2026. december 12-én szombaton 9.00–17.00 között rendezzük meg az emberi szervezet öngyógyító képességeit bemutató előadásokat, amelyre várunk szeretettel mindenkit, aki az alternatív gyógyászat, az öngyógyítás és az egészségmegőrzés terén új dolgokat szeretne megtanulni, valamint érdeklődik a tudatalatti programok működése iránt.
                   </ExpandableDetails>
+                </div>
+
+                {/* Offline részvétel */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[15px] font-semibold text-navy">Offline részvétel</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">5.000 Ft</p>
+                    <p className="text-[13px] text-[#666] mt-1">Személyes részvétel a konferencián.</p>
+                  </div>
+                </div>
+
+                {/* Online részvétel */}
+                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[15px] font-semibold text-navy">Online részvétel</p>
+                    <p className="text-[17px] font-bold text-navy mt-1">6.900 Ft</p>
+                    <p className="text-[13px] text-[#666] mt-1">Online csatlakozási lehetőség azok számára, akik távolról szeretnének részt venni.</p>
+                  </div>
                 </div>
               </div>
 
