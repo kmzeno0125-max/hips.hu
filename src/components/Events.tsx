@@ -746,22 +746,50 @@ export default function Events() {
                   </ExpandableDetails>
                 </div>
 
-                {/* Offline részvétel */}
-                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <p className="text-[15px] font-semibold text-navy">Offline részvétel</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">5.000 Ft</p>
-                    <p className="text-[13px] text-[#666] mt-1">Személyes részvétel a konferencián.</p>
+                {/* On-line jegy – 6.900 Ft */}
+                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>On-line jegy</p>
+                      <p className="text-[17px] font-bold text-navy mt-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>6.900 Ft</p>
+                      <p className="text-[13px] text-[#666] mt-1">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
+                    </div>
+                    <a
+                      href="https://buy.stripe.com/dRmdR90nH1RQfJievD6g80i"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    >
+                      MEGVÁSÁROLOM 6.900 FT
+                    </a>
                   </div>
+                  <ExpandableDetails id="online-jegy-details">
+                    Konferencia internetes jegy. Az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest” esemény internetes jegyének ára, amely magában foglalja az Élő Adáshoz történő csatlakozás lehetőségét, valamint a konferenciát követően e-mail levélben megkapja a konferenciáról készült felvételeket.
+                  </ExpandableDetails>
                 </div>
 
-                {/* Online részvétel */}
-                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <p className="text-[15px] font-semibold text-navy">Online részvétel</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">6.900 Ft</p>
-                    <p className="text-[13px] text-[#666] mt-1">Online csatlakozási lehetőség azok számára, akik távolról szeretnének részt venni.</p>
+                {/* Off-line – teljes felvétel utólag – 5.000 Ft */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="min-w-0">
+                      <p className="text-[15px] font-semibold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>Off-line – teljes felvétel utólag</p>
+                      <p className="text-[17px] font-bold text-navy mt-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>5.000 Ft</p>
+                      <p className="text-[13px] text-[#666] mt-1">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
+                    </div>
+                    <a
+                      href="https://buy.stripe.com/bJebJ12vPaom2Ww5Z76g80h"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    >
+                      MEGVÁSÁROLOM 5.000 FT
+                    </a>
                   </div>
+                  <ExpandableDetails id="offline-felvetel-details">
+                    Internetes kedvezményes jegy. Ez az internetes kedvezményes jegy a 2026. december 12-én tartandó eseményről készült felvétel megrendelésének az ára. Amennyiben nem tud részt venni az eseményen, vagy aznap más elfoglaltsága van, akkor e-mail levélben utólag elküldjük Önnek a teljes felvételt.
+                  </ExpandableDetails>
                 </div>
               </div>
 
