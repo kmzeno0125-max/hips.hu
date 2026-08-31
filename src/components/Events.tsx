@@ -755,7 +755,7 @@ export default function Events() {
                       <p className="text-[13px] text-[#666] mt-1">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
                     </div>
                     <a
-                      href="https://buy.stripe.com/dRmdR90nH1RQfJievD6g80i"
+                      href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
@@ -778,7 +778,7 @@ export default function Events() {
                       <p className="text-[13px] text-[#666] mt-1">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
                     </div>
                     <a
-                      href="https://buy.stripe.com/bJebJ12vPaom2Ww5Z76g80h"
+                      href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
