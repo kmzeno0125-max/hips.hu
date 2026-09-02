@@ -52,7 +52,7 @@ export default function BookPromo() {
               href="https://buy.stripe.com/5kQbJ10nH9ki0Oo0EN6g800"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-block font-body text-[15px] font-semibold bg-cyan text-navy px-8 py-[14px] rounded-[6px] mb-8"
+              className="btn-payment mb-8"
             >
               MEGVÁSÁROLOM
             </a>

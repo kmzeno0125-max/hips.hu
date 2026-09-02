@@ -145,22 +145,16 @@ function WebinarButtons({ event }: { event: EventLocation }) {
         Válassza ki az Önnek megfelelő webinar részvételi lehetőséget.
       </p>
       <div className="flex flex-col gap-3">
-        {event.webinarOptions?.map((option, i) => (
+        {event.webinarOptions?.map((option) => (
           <a
             key={option.label}
             href={option.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`btn-primary w-full text-center rounded-[6px] px-5 py-3 transition-colors ${
-              i === 0
-                ? 'bg-navy text-white hover:bg-cobalt text-[14px] font-semibold'
-                : i === 1
-                  ? 'border-[1.5px] border-cyan bg-cyan/[0.08] text-navy hover:bg-cyan/[0.18] text-[14px] font-semibold'
-                  : 'border-[1.5px] border-navy/20 text-navy/80 hover:border-navy/40 hover:bg-navy/[0.04] text-[14px] font-semibold'
-            }`}
+            className="btn-payment w-full"
           >
             {option.label}: {option.price}
-            <span className="block text-[11px] font-normal opacity-70 mt-0.5">MEGVÁSÁROLOM</span>
+            <span className="block text-[11px] font-normal opacity-80 mt-0.5">MEGVÁSÁROLOM</span>
           </a>
         ))}
       </div>
@@ -204,7 +198,7 @@ function KeszthelyButton({ event }: { event: EventLocation }) {
           href={event.singleLink || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
+          className="btn-payment flex-1"
         >
           MEGVÁSÁROLOM
         </a>
@@ -249,7 +243,7 @@ function SingleOnlyButton({ event }: { event: EventLocation }) {
           href={event.singleLink || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors bg-navy text-white hover:bg-cobalt"
+          className="btn-payment flex-1"
         >
           MEGVÁSÁROLOM
         </a>
@@ -303,11 +297,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
           onClick={handleClick}
           aria-disabled={disabled}
           tabIndex={disabled ? -1 : 0}
-          className={`btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 transition-colors ${
-            disabled
-              ? 'bg-navy/40 text-white/70 pointer-events-none'
-              : 'bg-navy text-white hover:bg-cobalt'
-          }`}
+          className={`btn-payment flex-1 ${disabled ? 'opacity-40 pointer-events-none' : ''}`}
         >
           MEGVÁSÁROLOM
         </a>
@@ -318,11 +308,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
           onClick={handleClick}
           aria-disabled={disabled}
           tabIndex={disabled ? -1 : 0}
-          className={`btn-primary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 border-[1.5px] transition-colors ${
-            disabled
-              ? 'border-cyan/30 text-cyan/50 pointer-events-none'
-              : 'border-cyan bg-cyan/[0.08] text-navy hover:bg-cyan/[0.18]'
-          }`}
+          className={`btn-payment flex-1 ${disabled ? 'opacity-40 pointer-events-none' : ''}`}
         >
           MEGVÁSÁROLOM
         </a>
@@ -333,11 +319,7 @@ function LocationButtons({ event }: { event: EventLocation }) {
           onClick={handleClick}
           aria-disabled={disabled}
           tabIndex={disabled ? -1 : 0}
-          className={`btn-secondary flex-1 text-center text-[14px] font-semibold rounded-[6px] px-5 py-3 border-[1.5px] transition-colors ${
-            disabled
-              ? 'border-navy/10 text-navy/30 pointer-events-none'
-              : 'border-navy/20 text-navy/80 hover:border-navy/40 hover:bg-navy/[0.04]'
-          }`}
+          className={`btn-payment flex-1 ${disabled ? 'opacity-40 pointer-events-none' : ''}`}
         >
           MEGVÁSÁROLOM
         </a>
@@ -503,7 +485,7 @@ export default function Events() {
                     href="https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
+                    className="btn-payment"
                   >
                     Webinar alkalmanként: 600 Ft
                   </a>
@@ -511,7 +493,7 @@ export default function Events() {
                     href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
+                    className="btn-payment"
                   >
                     Havonta: 1.000 Ft
                   </a>
@@ -519,7 +501,7 @@ export default function Events() {
                     href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-[14px] font-semibold text-navy bg-off-white border border-navy/[0.12] rounded-[6px] px-5 py-2 hover:bg-navy/[0.06] transition-colors"
+                    className="btn-payment"
                   >
                     Éves előfizetés: 10.000 Ft
                   </a>
@@ -593,7 +575,7 @@ export default function Events() {
                 href="https://buy.stripe.com/bJecN5gmFbsqcx6gDL6g806"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-block font-body text-[15px] font-semibold text-white bg-navy rounded-[6px] px-7 py-3 hover:bg-cobalt"
+                className="btn-payment"
               >
                 MEGVÁSÁROLOM
               </a>
@@ -656,7 +638,7 @@ export default function Events() {
                       href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
                     >
                       MEGVÁSÁROLOM
                     </a>
@@ -686,7 +668,7 @@ export default function Events() {
                       href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center font-body text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
+                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
                     >
                       MEGVÁSÁROLOM
                     </a>
@@ -709,8 +691,7 @@ export default function Events() {
                     href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap"
-                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    className="btn-payment whitespace-nowrap"
                   >
                     MEGVÁSÁROLOM
                   </a>
@@ -735,8 +716,7 @@ export default function Events() {
                       href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
-                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
                     >
                       MEGVÁSÁROLOM
                     </a>
@@ -758,8 +738,7 @@ export default function Events() {
                       href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
-                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
                     >
                       MEGVÁSÁROLOM 6.900 FT
                     </a>
@@ -781,8 +760,7 @@ export default function Events() {
                       href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center text-[14px] font-semibold text-white bg-navy rounded-[6px] px-6 py-3 hover:bg-cobalt transition-colors whitespace-nowrap self-start sm:self-auto"
-                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
                     >
                       MEGVÁSÁROLOM 5.000 FT
                     </a>
