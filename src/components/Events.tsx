@@ -97,7 +97,6 @@ function SignupBlock({ event }: { event: EventLocation }) {
       </div>
 
       {event.type === 'webinar' && <WebinarButtons event={event} />}
-      {event.type === 'keszthely' && <KeszthelyButton event={event} />}
       {event.type === 'location' && <LocationButtons event={event} />}
       {event.type === 'singleOnly' && <SingleOnlyButton event={event} />}
 
@@ -157,51 +156,6 @@ function WebinarButtons({ event }: { event: EventLocation }) {
             <span className="block text-[11px] font-normal opacity-80 mt-0.5">MEGVÁSÁROLOM</span>
           </a>
         ))}
-      </div>
-      <p
-        className="text-center mt-3"
-        style={{
-          fontFamily: "'Figtree', sans-serif",
-          fontSize: '12px',
-          fontWeight: 400,
-          color: '#64748B',
-        }}
-      >
-        A jelentkezéssel elfogadja az{' '}
-        <Link
-          to="/aszf"
-          style={{ color: '#1D4DA8', textDecoration: 'underline', fontWeight: 500 }}
-        >
-          Általános Szerződési Feltételeket
-        </Link>{' '}
-        és az{' '}
-        <Link
-          to="/adatkezelesi-tajekoztato"
-          style={{ color: '#1D4DA8', textDecoration: 'underline', fontWeight: 500 }}
-        >
-          Adatkezelési tájékoztatót
-        </Link>
-        .
-      </p>
-    </>
-  );
-}
-
-function KeszthelyButton({ event }: { event: EventLocation }) {
-  return (
-    <>
-      <p className="text-[14px] text-[#555] mb-4 leading-[1.6]">
-        A részvételi díj egységesen {event.singlePrice}.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-3">
-        <a
-          href={event.singleLink || '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-payment flex-1"
-        >
-          MEGVÁSÁROLOM
-        </a>
       </div>
       <p
         className="text-center mt-3"
@@ -414,17 +368,19 @@ export default function Events() {
               <h3 className="font-display text-[22px] font-bold text-navy mb-4">
                 Öngyógyító Nap
               </h3>
-              <p className="text-[16px] text-navy font-semibold mb-8">
-                Keszthely, szombati napokon
+              <p className="text-[18px] text-navy font-bold mb-2">
+                Budapest
               </p>
-
-              <h4 className="font-display text-[18px] font-bold text-navy mb-5">
-                További időpontok és helyszínek:
-              </h4>
+              <p className="text-[15px] text-navy font-semibold mb-1">
+                2026. szeptember 13. vasárnap
+              </p>
+              <p className="text-[15px] text-navy font-semibold mb-8">
+                2026. szeptember 27. vasárnap
+              </p>
 
               <div className="bg-[#F8FAFC] border border-navy/[0.08] rounded-[8px] p-5 mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <p className="text-[15px] text-[#444] leading-[1.6]">
-                  Nem biztos benne, melyik program vagy jelentkezési forma megfelelő Önnek?
+                  Amennyiben kérdése van a részleteket illetően, akkor kattintson az alábbi gombra!
                 </p>
                 <a
                   href="#kapcsolat"
@@ -523,69 +479,8 @@ export default function Events() {
             </div>
           </Reveal>
 
-          {/* EVENT 2 — Sorsfordito Nagy Utazas */}
+          {/* EVENT 2 — December 12 Budapest Konferencia Jegyek */}
           <Reveal direction="left" delay={0.18}>
-            <div className="bg-white rounded-[12px] border border-navy/[0.08] shadow-[0_4px_24px_rgba(21,46,122,0.06)] p-8 md:p-10">
-              <p className="text-[17px] font-semibold text-cyan italic mb-6 leading-[1.5]">
-                „Az Egészség a Legnagyobb Érték."
-              </p>
-
-              <p className="text-[16px] text-[#444] leading-[1.8] mb-6">
-                2026. július 4-től minden szombaton Keszthelyen, a Balaton-parton 12.00–14.00 között találkozom az oda érkező zarándokokkal, és beavatom a jelenlévőket abba a tudásba, amely nekem rendelkezésemre áll „Egészséges Életmód" témában.
-              </p>
-
-              <div className="bg-off-white rounded-[8px] p-5 mb-6 border-l-[3px] border-cyan">
-                <h4 className="font-display text-[17px] font-bold text-navy mb-3">
-                  Indulás előtti gyülekező:
-                </h4>
-                <p className="text-[15px] text-[#444] leading-[1.8] mb-4">
-                  Budapest, Kelenföld vasútállomás jegypénztáránál 8.10–8.30 között.
-                </p>
-
-                <h4 className="font-display text-[17px] font-bold text-navy mb-2">
-                  Indulás:
-                </h4>
-                <p className="text-[15px] text-[#444] leading-[1.8] mb-4">
-                  8.42-kor Kelenföld vasútállomásról.
-                </p>
-
-                <p className="text-[15px] text-[#444] leading-[1.8] mb-4">
-                  Kelenföld és Keszthely között bármelyik vasútállomáson fel lehet szállni a vonatra a menetjegy és a helyjegy előzetes megvásárlását követően, és lehet csatlakozni a büfékocsiban tartózkodó utastársakhoz.
-                </p>
-
-                <h4 className="font-display text-[17px] font-bold text-navy mb-2">
-                  Érkezés Keszthely vasútállomásra:
-                </h4>
-                <p className="text-[15px] text-[#444] leading-[1.8]">
-                  11.11-kor.
-                </p>
-              </div>
-
-              <p className="text-[15px] text-[#444] leading-[1.8] mb-2">
-                A Keszthelyen 12.00–14.00 között tartandó „Egészséges Életmód Áldás" programon való részvételi díj:
-              </p>
-              <p className="text-[17px] font-bold text-navy mb-1">
-                9.000 Ft / fő
-              </p>
-              <p className="text-[15px] text-[#444] mb-6">
-                Az útiköltség + étel-ital a büfékocsiban egyénileg külön fizetendő.
-              </p>
-
-              <a
-                href="https://buy.stripe.com/bJecN5gmFbsqcx6gDL6g806"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-payment"
-              >
-                MEGVÁSÁROLOM
-              </a>
-
-              <ProgramContactCta />
-            </div>
-          </Reveal>
-
-          {/* EVENT 3 — December 12 Budapest Konferencia Jegyek */}
-          <Reveal direction="left" delay={0.28}>
             <div id="egeszseg-konferencia-jegy" style={{ scrollMarginTop: '110px' }} className="bg-white rounded-[12px] border border-navy/[0.08] shadow-[0_4px_24px_rgba(21,46,122,0.06)] p-8 md:p-10">
               <p className="text-[17px] font-semibold text-cyan italic mb-6 leading-[1.5]">
                 „Az Egészség a Legnagyobb Érték."

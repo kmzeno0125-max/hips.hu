@@ -1,5 +1,5 @@
 export type EventFormat = 'workshop' | 'webinar';
-export type EventType = 'location' | 'webinar' | 'keszthely' | 'singleOnly';
+export type EventType = 'location' | 'webinar' | 'singleOnly';
 
 export interface WebinarOption {
   label: string;
@@ -46,12 +46,5 @@ export const eventLocations: EventLocation[] = [
         link: 'https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807',
       },
     ],
-  },
-  {
-    date: 'Minden szombaton Keszthelyen a Móló Café & Bárban „Egység Áldás" 12.00–14.00 között.',
-    city: 'Keszthely',
-    type: 'keszthely',
-    singlePrice: '9.000 Ft / fő',
-    singleLink: 'https://buy.stripe.com/bJecN5gmFbsqcx6gDL6g806',
   },
 ];
