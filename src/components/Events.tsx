@@ -604,7 +604,7 @@ export default function Events() {
                     href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-4"
+                    className="btn-payment w-full mt-2"
                   >
                     MEGVÁSÁROLOM
                   </a>
@@ -614,15 +614,15 @@ export default function Events() {
                 <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
                   <p className="text-[15px] font-semibold text-navy">On-line jegy</p>
                   <p className="text-[17px] font-bold text-navy mt-1">6.900 Ft</p>
-                  <p className="text-[13px] text-[#666] mt-1">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
                   <a
                     href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-4"
+                    className="btn-payment w-full mt-2"
                   >
                     MEGVÁSÁROLOM
                   </a>
+                  <p className="text-[13px] text-[#666] mt-3">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
                   <ExpandableDetails id="online-jegy-details">
                     Konferencia internetes jegy. Az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest" esemény internetes jegyének ára, amely magában foglalja az Élő Adáshoz történő csatlakozás lehetőségét, valamint a konferenciát követően e-mail levélben megkapja a konferenciáról készült felvételeket.
                   </ExpandableDetails>
@@ -632,15 +632,15 @@ export default function Events() {
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
                   <p className="text-[15px] font-semibold text-navy">Off-line jegy</p>
                   <p className="text-[17px] font-bold text-navy mt-1">5.000 Ft</p>
-                  <p className="text-[13px] text-[#666] mt-1">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
                   <a
                     href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-4"
+                    className="btn-payment w-full mt-2"
                   >
                     MEGVÁSÁROLOM
                   </a>
+                  <p className="text-[13px] text-[#666] mt-3">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
                   <ExpandableDetails id="offline-felvetel-details">
                     Internetes kedvezményes jegy. Ez az internetes kedvezményes jegy a 2026. december 12-én tartandó eseményről készült felvétel megrendelésének az ára. Amennyiben nem tud részt venni az eseményen, vagy aznap más elfoglaltsága van, akkor e-mail levélben utólag elküldjük Önnek a teljes felvételt.
                   </ExpandableDetails>
