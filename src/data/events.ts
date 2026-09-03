@@ -31,9 +31,9 @@ export const eventLocations: EventLocation[] = [
     format: 'webinar',
     webinarOptions: [
       {
-        label: 'Éves bérlet',
-        price: '10.000 Ft',
-        link: 'https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807',
+        label: 'Egyszeri alkalom',
+        price: '600 Ft',
+        link: 'https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809',
       },
       {
         label: 'Havi bérlet',
@@ -41,9 +41,9 @@ export const eventLocations: EventLocation[] = [
         link: 'https://buy.stripe.com/eVqeVdeex8geeFeafn6g808',
       },
       {
-        label: 'Egyszeri alkalom',
-        price: '600 Ft',
-        link: 'https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809',
+        label: 'Éves bérlet',
+        price: '10.000 Ft',
+        link: 'https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807',
       },
     ],
   },

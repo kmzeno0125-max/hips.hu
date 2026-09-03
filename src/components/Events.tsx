@@ -145,18 +145,16 @@ function WebinarButtons({ event }: { event: EventLocation }) {
       </p>
       <div className="flex flex-col gap-3">
         {event.webinarOptions?.map((option) => (
-          <div key={option.label} className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
-            <p className="text-[15px] font-semibold text-navy">{option.label}</p>
-            <p className="text-[17px] font-bold text-navy">{option.price}</p>
-            <a
-              href={option.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-payment w-full"
-            >
-              MEGVÁSÁROLOM
-            </a>
-          </div>
+          <a
+            key={option.label}
+            href={option.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-payment w-full flex-col gap-1"
+          >
+            <span className="text-[15px] font-semibold">{option.label}: {option.price}</span>
+            <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
+          </a>
         ))}
       </div>
       <p
@@ -439,42 +437,33 @@ export default function Events() {
                 </p>
 
                 <div className="flex flex-col gap-3 mb-6">
-                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
-                    <p className="text-[15px] font-semibold text-navy">Éves bérlet</p>
-                    <p className="text-[17px] font-bold text-navy">10.000 Ft</p>
-                    <a
-                      href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment w-full"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
-                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
-                    <p className="text-[15px] font-semibold text-navy">Havi bérlet</p>
-                    <p className="text-[17px] font-bold text-navy">1.000 Ft</p>
-                    <a
-                      href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment w-full"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
-                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
-                    <p className="text-[15px] font-semibold text-navy">Egyszeri alkalom</p>
-                    <p className="text-[17px] font-bold text-navy">600 Ft</p>
-                    <a
-                      href="https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment w-full"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
+                  <a
+                    href="https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full flex-col gap-1"
+                  >
+                    <span className="text-[15px] font-semibold">Egyszeri alkalom: 600 Ft</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
+                  </a>
+                  <a
+                    href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full flex-col gap-1"
+                  >
+                    <span className="text-[15px] font-semibold">Havi bérlet: 1.000 Ft</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
+                  </a>
+                  <a
+                    href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full flex-col gap-1"
+                  >
+                    <span className="text-[15px] font-semibold">Éves bérlet: 10.000 Ft</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
+                  </a>
                 </div>
 
                 <p className="text-[15px] text-[#444] leading-[1.8] mb-5">
