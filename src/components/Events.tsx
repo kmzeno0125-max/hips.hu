@@ -598,29 +598,27 @@ export default function Events() {
 
                 {/* Belépőjegy */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
-                  <p className="text-[15px] font-semibold text-navy">Belépőjegy</p>
-                  <p className="text-[17px] font-bold text-navy mt-1">9.000 Ft / fő</p>
                   <a
                     href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-2"
+                    className="btn-payment w-full flex-col gap-1"
                   >
-                    MEGVÁSÁROLOM
+                    <span className="text-[15px] font-semibold">Belépőjegy: 9.000 Ft / fő</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
                   </a>
                 </div>
 
                 {/* On-line jegy – 6.900 Ft */}
                 <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
-                  <p className="text-[15px] font-semibold text-navy">On-line jegy</p>
-                  <p className="text-[17px] font-bold text-navy mt-1">6.900 Ft</p>
                   <a
                     href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-2"
+                    className="btn-payment w-full flex-col gap-1"
                   >
-                    MEGVÁSÁROLOM
+                    <span className="text-[15px] font-semibold">On-line jegy: 6.900 Ft</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
                   </a>
                   <p className="text-[13px] text-[#666] mt-3">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
                   <ExpandableDetails id="online-jegy-details">
@@ -630,15 +628,14 @@ export default function Events() {
 
                 {/* Off-line jegy – 5.000 Ft */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
-                  <p className="text-[15px] font-semibold text-navy">Off-line jegy</p>
-                  <p className="text-[17px] font-bold text-navy mt-1">5.000 Ft</p>
                   <a
                     href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment w-full mt-2"
+                    className="btn-payment w-full flex-col gap-1"
                   >
-                    MEGVÁSÁROLOM
+                    <span className="text-[15px] font-semibold">Off-line jegy: 5.000 Ft</span>
+                    <span className="text-[14px] font-bold tracking-wide">MEGVÁSÁROLOM</span>
                   </a>
                   <p className="text-[13px] text-[#666] mt-3">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
                   <ExpandableDetails id="offline-felvetel-details">
