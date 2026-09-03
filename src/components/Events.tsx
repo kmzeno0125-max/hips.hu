@@ -145,16 +145,18 @@ function WebinarButtons({ event }: { event: EventLocation }) {
       </p>
       <div className="flex flex-col gap-3">
         {event.webinarOptions?.map((option) => (
-          <a
-            key={option.label}
-            href={option.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-payment w-full"
-          >
-            {option.label}: {option.price}
-            <span className="block text-[11px] font-normal opacity-80 mt-0.5">MEGVÁSÁROLOM</span>
-          </a>
+          <div key={option.label} className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
+            <p className="text-[15px] font-semibold text-navy">{option.label}</p>
+            <p className="text-[17px] font-bold text-navy">{option.price}</p>
+            <a
+              href={option.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-payment w-full"
+            >
+              MEGVÁSÁROLOM
+            </a>
+          </div>
         ))}
       </div>
       <p
@@ -436,31 +438,43 @@ export default function Events() {
                   A webinar havi előfizetéssel: 1.000 Ft/hó, valamint éves előfizetéssel: 10.000 Ft/év díj befizetése után lehetséges.
                 </p>
 
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <a
-                    href="https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-payment"
-                  >
-                    Webinar alkalmanként: 600 Ft
-                  </a>
-                  <a
-                    href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-payment"
-                  >
-                    Havonta: 1.000 Ft
-                  </a>
-                  <a
-                    href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-payment"
-                  >
-                    Éves előfizetés: 10.000 Ft
-                  </a>
+                <div className="flex flex-col gap-3 mb-6">
+                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
+                    <p className="text-[15px] font-semibold text-navy">Éves bérlet</p>
+                    <p className="text-[17px] font-bold text-navy">10.000 Ft</p>
+                    <a
+                      href="https://buy.stripe.com/00wcN54DX3ZY0Oobjr6g807"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-payment w-full"
+                    >
+                      MEGVÁSÁROLOM
+                    </a>
+                  </div>
+                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
+                    <p className="text-[15px] font-semibold text-navy">Havi bérlet</p>
+                    <p className="text-[17px] font-bold text-navy">1.000 Ft</p>
+                    <a
+                      href="https://buy.stripe.com/eVqeVdeex8geeFeafn6g808"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-payment w-full"
+                    >
+                      MEGVÁSÁROLOM
+                    </a>
+                  </div>
+                  <div className="border border-navy/[0.08] rounded-[8px] p-4 flex flex-col gap-3">
+                    <p className="text-[15px] font-semibold text-navy">Egyszeri alkalom</p>
+                    <p className="text-[17px] font-bold text-navy">600 Ft</p>
+                    <a
+                      href="https://buy.stripe.com/6oU4gz0nHfIG40A0EN6g809"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-payment w-full"
+                    >
+                      MEGVÁSÁROLOM
+                    </a>
+                  </div>
                 </div>
 
                 <p className="text-[15px] text-[#444] leading-[1.8] mb-5">
@@ -514,152 +528,130 @@ export default function Events() {
               <div className="space-y-4">
                 {/* Smaragd Partner */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold text-navy">Smaragd Partner 2 nm kiállítás +20 db jegy +1 db VIP jegy</p>
-                      <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
-                      <BenefitList
-                        columns={2}
-                        items={[
-                          '2 m² kiállítói felület',
-                          '20 db normál belépőjegy',
-                          '2 db ebédjegy',
-                          '2 db vacsorajegy',
-                          'szponzori logómegjelenés',
-                        ]}
-                      />
-                    </div>
-                    <a
-                      href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
+                  <p className="text-[15px] font-semibold text-navy">Smaragd Partner 2 nm kiállítás +20 db jegy +1 db VIP jegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">500.000 Ft</p>
+                  <BenefitList
+                    columns={2}
+                    items={[
+                      '2 m² kiállítói felület',
+                      '20 db normál belépőjegy',
+                      '2 db ebédjegy',
+                      '2 db vacsorajegy',
+                      'szponzori logómegjelenés',
+                    ]}
+                  />
+                  <a
+                    href="https://buy.stripe.com/4gM00j6M5fIG2WwfzH6g80a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full mt-4"
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
                   <ExpandableDetails id="smaragd-details">
-                    A Smaragd Partner az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest” szponzora, aki a helyszínen 2 m² kiállítói felületen bemutathatja termékeit, valamint az esemény kommunikációs felületein feltüntetésre kerül a szponzor logója. A Smaragd Partner szponzori jegyet megvásárló 20 db normál belépőjegyet, 2 db ebédjegyet és 2 db vacsorajegyet kap.
+                    A Smaragd Partner az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest" szponzora, aki a helyszínen 2 m² kiállítói felületen bemutathatja termékeit, valamint az esemény kommunikációs felületein feltüntetésre kerül a szponzor logója. A Smaragd Partner szponzori jegyet megvásárló 20 db normál belépőjegyet, 2 db ebédjegyet és 2 db vacsorajegyet kap.
                   </ExpandableDetails>
                 </div>
 
                 {/* VIP jegy */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
-                      <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / 2 fő</p>
-                      <BenefitList
-                        items={[
-                          '2 fő részére',
-                          'egész napos program',
-                          'ebéd',
-                          'VIP vacsora',
-                          '2 éjszaka szállás',
-                        ]}
-                      />
-                    </div>
-                    <a
-                      href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
+                  <p className="text-[15px] font-semibold text-navy">VIP jegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">250.000 Ft / 2 fő</p>
+                  <BenefitList
+                    items={[
+                      '2 fő részére',
+                      'egész napos program',
+                      'ebéd',
+                      'VIP vacsora',
+                      '2 éjszaka szállás',
+                    ]}
+                  />
+                  <a
+                    href="https://buy.stripe.com/9B6bJ14DXbsq7cM0EN6g80b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full mt-4"
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
                   <ExpandableDetails id="vip-details">
-                    A 2026. december 12-én szombaton tartandó „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód” konferencia utáni VIP vacsora belépőjegyének ára az egész napos programon való részvételt is tartalmazza ebéddel. A VIP jegy 2 főre szól, és tartalmazza a péntek és a szombat éjszakai szállás költségét is egy közeli hotelben.
+                    A 2026. december 12-én szombaton tartandó „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód" konferencia utáni VIP vacsora belépőjegyének ára az egész napos programon való részvételt is tartalmazza ebéddel. A VIP jegy 2 főre szól, és tartalmazza a péntek és a szombat éjszakai szállás költségét is egy közeli hotelben.
                   </ExpandableDetails>
                 </div>
 
                 {/* Időszakos kedvezmény + visszaszámláló */}
                 <DiscountCountdown />
 
-                {/* Részvételi jegy */}
-                <div className="border border-navy/[0.08] rounded-[10px] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <p className="text-[15px] font-semibold text-navy">Részvételi jegy</p>
-                    <p className="text-[17px] font-bold text-navy mt-1">9.000 Ft / fő</p>
-                  </div>
+                {/* Kiállítói jegy */}
+                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
+                  <p className="text-[15px] font-semibold text-navy">Kiállítói jegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">90.000 Ft</p>
+                  <BenefitList
+                    items={[
+                      '2 m² kiállítói stand',
+                      '10 db belépőjegy',
+                      '2026. december 12.',
+                      '9.00–17.00',
+                    ]}
+                  />
                   <a
-                    href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
+                    href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-payment whitespace-nowrap"
+                    className="btn-payment w-full mt-4"
                   >
                     MEGVÁSÁROLOM
                   </a>
-                </div>
-
-                {/* Kiállítói jegy */}
-                <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold text-navy">Kiállítói jegy</p>
-                      <p className="text-[17px] font-bold text-navy mt-1">90.000 Ft</p>
-                      <BenefitList
-                        items={[
-                          '2 m² kiállítói stand',
-                          '10 db belépőjegy',
-                          '2026. december 12.',
-                          '9.00–17.00',
-                        ]}
-                      />
-                    </div>
-                    <a
-                      href="https://buy.stripe.com/14A28rc6p3ZYgNmfzH6g80g"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
-                    >
-                      MEGVÁSÁROLOM
-                    </a>
-                  </div>
                   <ExpandableDetails id="kiallitoi-details">
                     2026. december 12-én szombaton 9.00–17.00 között rendezzük meg az emberi szervezet öngyógyító képességeit bemutató előadásokat, amelyre várunk szeretettel mindenkit, aki az alternatív gyógyászat, az öngyógyítás és az egészségmegőrzés terén új dolgokat szeretne megtanulni, valamint érdeklődik a tudatalatti programok működése iránt.
                   </ExpandableDetails>
                 </div>
 
+                {/* Belépőjegy */}
+                <div className="border border-navy/[0.08] rounded-[10px] p-5">
+                  <p className="text-[15px] font-semibold text-navy">Belépőjegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">9.000 Ft / fő</p>
+                  <a
+                    href="https://buy.stripe.com/cNi00j7Q968654E9bj6g80c"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full mt-4"
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
+                </div>
+
                 {/* On-line jegy – 6.900 Ft */}
                 <div className="border border-cyan/40 rounded-[10px] p-5 bg-[#F8FBFD]">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>On-line jegy</p>
-                      <p className="text-[17px] font-bold text-navy mt-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>6.900 Ft</p>
-                      <p className="text-[13px] text-[#666] mt-1">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
-                    </div>
-                    <a
-                      href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
-                    >
-                      MEGVÁSÁROLOM 6.900 FT
-                    </a>
-                  </div>
+                  <p className="text-[15px] font-semibold text-navy">On-line jegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">6.900 Ft</p>
+                  <p className="text-[13px] text-[#666] mt-1">Élő online részvétel + a konferencia teljes felvétele utólag e-mailben.</p>
+                  <a
+                    href="https://link.fastpaydirect.com/payment-link/6a95838dd6768df054448dae"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full mt-4"
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
                   <ExpandableDetails id="online-jegy-details">
-                    Konferencia internetes jegy. Az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest” esemény internetes jegyének ára, amely magában foglalja az Élő Adáshoz történő csatlakozás lehetőségét, valamint a konferenciát követően e-mail levélben megkapja a konferenciáról készült felvételeket.
+                    Konferencia internetes jegy. Az „Egészség a Legnagyobb Érték – Országos Egészségmegőrző és Életmód Konferencia Budapest" esemény internetes jegyének ára, amely magában foglalja az Élő Adáshoz történő csatlakozás lehetőségét, valamint a konferenciát követően e-mail levélben megkapja a konferenciáról készült felvételeket.
                   </ExpandableDetails>
                 </div>
 
-                {/* Off-line – teljes felvétel utólag – 5.000 Ft */}
+                {/* Off-line jegy – 5.000 Ft */}
                 <div className="border border-navy/[0.08] rounded-[10px] p-5">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="text-[15px] font-semibold text-navy" style={{ fontFamily: "'Times New Roman', Times, serif" }}>Off-line – teljes felvétel utólag</p>
-                      <p className="text-[17px] font-bold text-navy mt-1" style={{ fontFamily: "'Times New Roman', Times, serif" }}>5.000 Ft</p>
-                      <p className="text-[13px] text-[#666] mt-1">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
-                    </div>
-                    <a
-                      href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-payment whitespace-nowrap self-start sm:self-auto"
-                    >
-                      MEGVÁSÁROLOM 5.000 FT
-                    </a>
-                  </div>
+                  <p className="text-[15px] font-semibold text-navy">Off-line jegy</p>
+                  <p className="text-[17px] font-bold text-navy mt-1">5.000 Ft</p>
+                  <p className="text-[13px] text-[#666] mt-1">Ha nem tud részt venni az eseményen, a teljes konferenciafelvételt utólag e-mailben küldjük el.</p>
+                  <a
+                    href="https://link.fastpaydirect.com/payment-link/6a958523f9c8c807930baf96"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-payment w-full mt-4"
+                  >
+                    MEGVÁSÁROLOM
+                  </a>
                   <ExpandableDetails id="offline-felvetel-details">
                     Internetes kedvezményes jegy. Ez az internetes kedvezményes jegy a 2026. december 12-én tartandó eseményről készült felvétel megrendelésének az ára. Amennyiben nem tud részt venni az eseményen, vagy aznap más elfoglaltsága van, akkor e-mail levélben utólag elküldjük Önnek a teljes felvételt.
                   </ExpandableDetails>
